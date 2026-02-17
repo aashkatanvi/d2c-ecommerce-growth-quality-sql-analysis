@@ -1,124 +1,122 @@
-# D2C E-Commerce Growth Quality Analysis (SQL Case Study)
+Growth Quality Analysis — D2C E-commerce (SQL Case Study)
+📌 Overview
 
-SQL case study evaluating whether revenue growth in a D2C e-commerce model reflects healthy expansion or volume-driven dependency, using 1M+ transactional records from the Olist dataset.
+This project evaluates whether revenue growth in a D2C e-commerce model reflects healthy expansion or is primarily volume-driven.
 
----
+Using 1M+ transactional records from the Brazilian Olist dataset, I performed structured SQL analysis across:
 
-## Overview
+Customer segmentation
 
-This project investigates the structure behind revenue growth.  
+Revenue concentration
 
-While top-line revenue increased, leadership lacked clarity on whether growth was supported by retention strength, operational efficiency, and sustainable demand — or primarily driven by expanding order volume and new customer acquisition.
+Category performance
 
-A structured SQL framework was used to analyze customer behavior, revenue concentration, category reliance, geographic performance, freight cost pressure, and time-based growth patterns.
+City-level efficiency
 
----
+Time-based growth trends
 
-## Business Problem
+Freight cost pressure
 
-Despite increasing revenue, profitability and operational efficiency did not show proportional improvement.  
+The goal was to assess growth quality and identify structural risks beyond top-line revenue performance.
 
-Leadership needed clarity on whether growth was:
-- Retention-driven or acquisition-led  
-- Supported by repeat purchasing depth  
-- Concentrated among specific customers or broadly distributed  
-- Efficient across categories and cities  
+🧩 Business Problem
 
-Without this visibility, long-term sustainability risk could not be assessed.
+Although revenue increased over time, profitability and operational efficiency did not improve proportionally.
 
----
+Leadership lacked clarity on:
 
-## Analytical Framework
+Whether growth is driven by repeat customers or one-time buyers
 
-The analysis was conducted in layered stages:
+Whether revenue is concentrated among a small customer segment
 
-- Customer segmentation (one-time vs repeat buyers)  
-- Revenue concentration analysis (cumulative distribution)  
-- Category-level revenue and repeat contribution  
-- Average order value evaluation  
-- City-level revenue, scale, and freight burden  
-- Monthly revenue and order trend analysis  
+Whether certain categories depend heavily on new buyers
 
-All queries were written using CTEs, aggregations, window functions, and structured joins in PostgreSQL.
+Whether some cities generate volume without value efficiency
 
----
+Whether logistics costs create hidden pressure
 
-## Executive Summary
+Without this visibility, strategic decisions around retention, expansion, and optimization remain uncertain.
 
-### 1. Growth Structure  
-Revenue expansion is primarily volume-driven, with increasing order counts and stable average order value.
+📊 Analytical Framework
 
-### 2. Customer Structure  
-One-time buyers contribute the majority of revenue, indicating acquisition-led growth with limited repeat depth.
+The analysis was structured in six layers:
 
-### 3. Revenue Concentration  
-Revenue is broadly distributed across customers, with no extreme reliance on a small high-value segment.
+Customer Segmentation – One-time vs Repeat buyers
 
-### 4. Category Risk  
-High-revenue categories show limited repeat contribution, reinforcing dependency on new demand.
+Revenue Concentration – Distribution of revenue across customers
 
-### 5. Structural Risk  
-The business demonstrates scale growth but remains structurally dependent on continuous customer acquisition.
+Category Patterns – Revenue split and repeat dependency by category
 
----
+City-Level Efficiency – Revenue, order volume, AOV comparison
 
-## Dashboard Highlights
+Time-Based Trends – Monthly revenue and order growth patterns
 
-- Revenue Structure by Customer Type  
-- Revenue Concentration Curve  
-- Repeat Revenue Share by Category  
-- Average Order Value by Category  
-- Category Revenue Contribution by Customer Type  
+Freight Efficiency – Freight cost as a % of revenue by city
 
----
+All revenue analysis includes only delivered orders to ensure transactional integrity.
 
-## Limitations
+🔎 Key Findings
+1️⃣ Growth Structure
 
-- No product cost or margin data available  
-- No marketing or acquisition cost data  
-- No demographic or channel-level customer data  
-- Early 2016 period contains limited transactional coverage  
+Revenue growth is volume-driven. Order count increased over time while average order value remained stable.
 
-Profitability is assessed using behavioral and operational proxies rather than true margin calculations.
+2️⃣ Customer Structure
 
----
+Revenue is heavily dependent on one-time buyers. Repeat contribution remains limited.
 
-## Tools Used
+3️⃣ Revenue Distribution
 
-- PostgreSQL (SQL)
-- Window Functions & CTEs
-- Zoho Analytics (Visualization)
-- GitHub (Documentation & Versioning)
+Revenue is broadly distributed across customers. No extreme dependency on a small high-value segment.
 
----
+4️⃣ Category Dependency
 
-## Project Structure
+High-revenue categories are primarily driven by one-time buyers, indicating limited repeat depth.
 
-```
-d2c-ecommerce-growth-quality-sql-analysis/
-│
-├── sql/
-│   ├── 01_customer_segmentation.sql
-│   ├── 02_revenue_concentration.sql
-│   ├── 03_category_analysis.sql
-│   ├── 04_city_analysis.sql
-│   ├── 05_time_trend_analysis.sql
-│   └── 06_freight_efficiency_analysis.sql
-│
-├── dashboard/
-│   ├── revenue_structure_by_customer_type.pdf
-│   ├── revenue_concentration_curve.pdf
-│   ├── repeat_revenue_share_by_category.pdf
-│   ├── average_order_value_by_category.pdf
-│   └── category_revenue_by_customer_type.pdf
-│
-└── README.md
-```
+5️⃣ Geographic Efficiency
 
----
+Large cities generate scale through order volume. High freight pressure is mostly concentrated in small, low-revenue cities.
 
-## Core Insight
+6️⃣ Structural Risk
 
-Revenue growth is strong in scale but structurally dependent on acquisition, with limited repeat purchasing depth to sustain long-term expansion without continuous order volume growth.
+The business is structurally dependent on continuous customer acquisition. Without stronger retention or higher order value, long-term sustainability may face pressure.
 
+⚠ Limitations
 
+No product cost or margin data available
+
+No marketing or acquisition cost information
+
+No demographic or channel data
+
+Early 2016 data is partial and may not reflect true business performance
+
+Profitability was assessed using proxies such as AOV, repeat behavior, and freight burden.
+
+🛠 Tools Used
+
+PostgreSQL
+
+Window functions
+
+CTEs
+
+Aggregations & ranking
+
+Order-level and item-level modeling
+
+📂 Repository Structure
+sql/
+├── 01_customer_segmentation.sql
+├── 02_revenue_concentration.sql
+├── 03_category_analysis.sql
+├── 04_city_efficiency.sql
+├── 05_time_trend.sql
+├── 06_freight_efficiency.sql
+
+dashboards/
+├── revenue_structure.pdf
+├── revenue_concentration.pdf
+├── category_analysis.pdf
+├── city_efficiency.pdf
+├── time_trend.pdf
+├── freight_efficiency.pdf
