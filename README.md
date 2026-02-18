@@ -125,7 +125,7 @@ As a result, profitability is evaluated using behavioral and structural proxies 
 
 ---
 
-### 👤 Author
+### 👤 Aashka Tanvi
 
 SQL Case Study – Growth Quality Evaluation  
 Built as an end-to-end analyst-style project focusing on business framing and structural risk assessment.
