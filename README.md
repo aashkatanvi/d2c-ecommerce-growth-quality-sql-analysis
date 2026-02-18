@@ -69,7 +69,7 @@ Revenue growth is primarily driven by increasing order volume, while average ord
 One-time buyers contribute the majority of orders and revenue. The repeat customer base remains comparatively small.
 
 ### 3️⃣ Revenue Concentration  
-Revenue is broadly distributed across customers, with no extreme dependency on a small group of high-value buyers.
+Revenue shows moderate concentration: the top 10% of customers contribute 41% of total revenue, and the top 20% contribute 57%. While revenue is not dominated by a tiny elite segment, customer value is uneven and skewed toward higher-spending customers.
 
 ### 4️⃣ Category Dependency  
 Several high-revenue categories are largely driven by one-time buyers, indicating limited repeat engagement in key segments.
