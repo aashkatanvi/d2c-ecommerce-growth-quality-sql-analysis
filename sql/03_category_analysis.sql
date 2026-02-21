@@ -12,7 +12,7 @@ SELECT
           ELSE 'repeat'
           END customer_type
 FROM olist_project.customers c
-INNER JOIN olist_project.orders o
+JOIN olist_project.orders o
       ON c.customer_id = o.customer_id
 WHERE order_status = 'delivered'
 GROUP BY c.customer_unique_id
@@ -24,9 +24,9 @@ SELECT
       cs.customer_unique_id,
       cs.customer_type
 FROM olist_project.orders o
-INNER JOIN olist_project.customers c
+JOIN olist_project.customers c
       ON o.customer_id = c.customer_id
-INNER JOIN customer_segmentation cs
+JOIN customer_segmentation cs
       ON cs.customer_unique_id = c.customer_unique_id
 WHERE o.order_status = 'delivered'
 )
@@ -40,7 +40,7 @@ SELECT
 FROM olist_project.order_item ot
 LEFT JOIN olist_project.products p
       ON ot.product_id = p.product_id
-INNER JOIN olist_project.orders o
+JOIN olist_project.orders o
       ON o.order_id = ot.order_id
 WHERE o.order_status = 'delivered'
 )
@@ -53,7 +53,7 @@ WHERE o.order_status = 'delivered'
       obc.customer_type,
       opp.order_item_id
 FROM order_per_product opp
-INNER JOIN order_by_customer obc
+JOIN order_by_customer obc
       ON opp.order_id = obc.order_id
 )
 SELECT
@@ -64,4 +64,5 @@ SELECT
       SUM(price) total_revenue
 FROM ordered_items
 GROUP BY product_category_name, customer_type;
+
 
