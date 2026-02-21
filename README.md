@@ -43,7 +43,7 @@ All analysis was performed using SQL (PostgreSQL-style syntax).
 Key steps included:
 
 - Segmenting customers into one-time vs repeat buyers
-- Calculating order-level revenue from item prices
+- Calculated order-level revenue by summing item prices and freight charges per order
 - Ranking customers to evaluate revenue concentration
 - Analyzing category revenue split by customer type
 - Comparing city-level revenue, AOV, and freight %
