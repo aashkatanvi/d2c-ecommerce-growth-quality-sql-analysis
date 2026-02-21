@@ -21,6 +21,22 @@ The objective was to understand whether growth reflects sustainable performance 
 
 ---
 
+## 🗂 Data Model Context
+
+The dataset consists of multiple relational tables representing orders, customers, products, sellers, payments, reviews, and geolocation.
+
+This analysis primarily utilized:
+
+- `order_items` → item-level price and freight values  
+- `orders` → order status and timestamps  
+- `customers` → customer-level aggregation  
+- `products` → category-level analysis  
+- `geolocation` → city-level efficiency analysis  
+
+Revenue was calculated at the item level and aggregated directly to the customer level after filtering for delivered orders.
+
+---
+
 ## 🧩 Business Problem
 
 Although revenue has increased, profitability and operational efficiency have not improved proportionally.
@@ -43,7 +59,7 @@ All analysis was performed using SQL (PostgreSQL-style syntax).
 Key steps included:
 
 - Segmenting customers into one-time vs repeat buyers
-- Calculated order-level revenue by summing item prices and freight charges per order
+- Derived order-level revenue by aggregating item price and freight value to reflect total customer payment
 - Ranking customers to evaluate revenue concentration
 - Analyzing category revenue split by customer type
 - Comparing city-level revenue, AOV, and freight %
@@ -69,7 +85,7 @@ Revenue growth is primarily driven by increasing order volume, while average ord
 One-time buyers contribute the majority of orders and revenue. The repeat customer base remains comparatively small.
 
 ### 3️⃣ Revenue Concentration  
-Revenue shows moderate concentration: the top 10% of customers contribute 41% of total revenue, and the top 20% contribute 57%. While revenue is not dominated by a tiny elite segment, customer value is uneven and skewed toward higher-spending customers.
+Revenue shows moderate concentration: the top 10% of customers contribute 41% of total revenue, and the top 20% contribute 54%. Revenue is moderately concentrated, with value skewed toward higher-spending customers.
 
 ### 4️⃣ Category Dependency  
 Several high-revenue categories are largely driven by one-time buyers, indicating limited repeat engagement in key segments.
@@ -116,7 +132,7 @@ As a result, profitability is evaluated using behavioral and structural proxies 
 
 ## 💡 Skills Demonstrated
 
-- Complex multi-table joins  
+- Multi-table joins across normalized transactional tables  
 - CTE-based query structuring  
 - Window functions (RANK, cumulative revenue)  
 - Revenue proxy modeling  
