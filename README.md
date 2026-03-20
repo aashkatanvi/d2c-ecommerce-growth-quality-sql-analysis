@@ -56,14 +56,14 @@ Profitability was assessed using behavioral proxies:
 ### 1️⃣ Customer Structure
 One-time buyers contribute the majority of orders and revenue. The repeat customer base remains comparatively small, confirming growth is **acquisition-led rather than retention-led**.
 
-![Revenue Structure by Customer Type](dashboard/Revenue%20structure%20by%20customer%20type.png)
+![Revenue Structure by Customer Type](dashboard/Revenue%20Structure%20by%20Category%20type.png)
 
 ---
 
 ### 2️⃣ Revenue Concentration
 The top 10% of customers contribute **41% of total revenue**, and the top 20% contribute **54%**. Revenue is moderately concentrated, with value skewed toward higher-spending customers.
 
-![Revenue Concentration Curve](dashboard/Revenue%20concentration%20curve.png)
+![Revenue Concentration Curve](dashboard/Revenue%20Concentration%20Curve.png)
 
 ---
 
@@ -77,14 +77,14 @@ Several high-revenue categories are largely driven by one-time buyers, indicatin
 ### 4️⃣ Repeat Revenue Share
 Repeat revenue remains low across all categories, with **no segment contributing more than 10%** from returning customers.
 
-![Repeat Revenue Share by Category](dashboard/Repeat%20Revenue%20Share%20by%20category.png)
+![Repeat Revenue Share by Category](dashboard/Repeat%20Revenue%20Share%20by%20Category.png)
 
 ---
 
 ### 5️⃣ Order Value vs Volume
 Revenue concentration across categories is driven more by **order volume** than by high average order value — confirming the business is scaling through acquisition, not through increasing customer value.
 
-![AOV by Category](dashboard/AOV%20by%20category.png)
+![AOV by Category](dashboard/AOV%20by%20Category.png)
 
 ---
 
