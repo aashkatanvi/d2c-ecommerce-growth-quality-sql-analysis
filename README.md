@@ -104,6 +104,39 @@ Profitability is therefore evaluated using behavioral and structural proxies rat
 
 ---
 
+---
+
+## 📘 Learning Breakdown (Simple Explanation)
+
+This section explains the analysis in a clear and beginner-friendly way.
+
+### 1. Growth vs Retention
+A business can have increasing orders but still face problems.  
+If most customers buy only once, growth is driven by new users instead of retention.
+
+### 2. Repeat vs One-Time Customers
+Customers can be classified based on how many times they purchase:
+- One-time customers → low engagement  
+- Repeat customers → stronger loyalty  
+
+A higher share of repeat customers usually indicates a healthier business.
+
+### 3. Revenue Concentration
+Revenue is often not evenly distributed.  
+If a small group of customers contributes most of the revenue, it creates dependency risk.
+
+### 4. Why This Analysis Matters
+Instead of focusing only on total sales, it is important to also consider:
+- Customer retention  
+- Revenue distribution  
+- Long-term sustainability  
+
+### Practice Thinking
+- How can repeat purchase rate be calculated using SQL?
+- How can high-value customers be identified?
+
+---
+
 ## 📂 Repository Structure
 ```
 📁 sql/
