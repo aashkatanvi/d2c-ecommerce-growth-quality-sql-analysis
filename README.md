@@ -104,8 +104,6 @@ Profitability is therefore evaluated using behavioral and structural proxies rat
 
 ---
 
----
-
 ## 📘 Learning Breakdown (Simple Explanation)
 
 This section explains the analysis in a clear and beginner-friendly way.
