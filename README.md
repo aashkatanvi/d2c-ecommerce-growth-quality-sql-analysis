@@ -79,9 +79,7 @@ The executive overview evaluates whether revenue growth is translating into stro
 - Top categories by revenue and repeat mix
 - Total revenue, orders, AOV, and repeat revenue KPIs
 
-![D2C E-Commerce Growth Quality Dashboard](dashboard/D2C%20E-Commerce%20Growth%20Quality.png)
-
----
+![D2C E-Commerce Growth Quality Dashboard](dashboard/D2C-Ecommerce-Growth-Quality.png)
 
 ## Page 2 — Customer & Operational Drivers
 
@@ -93,7 +91,9 @@ The second page focuses on structural concentration and the business implication
 - Revenue concentration across top cities
 - Business implications and recommended actions
 
-![Customer & Operational Drivers Dashboard](dashboard/Customer%20%26%20Operational%20Drivers.png)
+![Customer & Operational Drivers Dashboard](dashboard/Customer-Operational-Drivers.png)
+
+**Editable Power BI file:** [`D2C-Ecommerce-Growth-Quality.pbix`](dashboard/D2C-Ecommerce-Growth-Quality.pbix)
 
 ---
 
@@ -143,8 +143,9 @@ São Paulo generates approximately **R$1.86M**, nearly twice Rio de Janeiro at a
    └── 06_freight_efficiency_analysis.sql
 
 📁 dashboard/
-   ├── D2C E-Commerce Growth Quality.png
-   └── Customer & Operational Drivers.png
+   ├── D2C-Ecommerce-Growth-Quality.pbix
+   ├── D2C-Ecommerce-Growth-Quality.png
+   └── Customer-Operational-Drivers.png
 
 README.md
 ```
