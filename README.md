@@ -1,169 +1,170 @@
-# 📊 Growth Quality Analysis in a D2C E-commerce Model
-SQL case study evaluating growth structure, customer behavior, and structural risk using transactional data from the Brazilian E-Commerce Public Dataset (Olist).
+# 📊 D2C E-Commerce Growth Quality Analysis
+
+**SQL + Power BI case study evaluating whether e-commerce growth is healthy, sustainable, and retention-led.**
 
 ---
 
-## 🔎 Overview
+## 🔎 Business Question
 
-This project evaluates whether revenue growth in a Direct-to-Consumer (D2C) e-commerce model reflects healthy expansion or is primarily volume-driven.
+Is revenue growth translating into stronger customer economics — or is the business increasingly dependent on one-time purchases and concentrated revenue sources?
 
-Using 1M+ transactional records, I conducted a structured SQL analysis across customer segmentation, revenue concentration, category-level dependency, city-level efficiency, freight cost pressure, and time-based trends.
+The analysis evaluates:
 
-The objective was to understand whether growth reflects sustainable performance or hidden structural risk.
+- customer purchase structure
+- revenue concentration
+- category-level one-time vs repeat revenue
+- revenue trends over time
+- geographic revenue concentration
+- freight cost pressure as an operational proxy
 
 ---
 
-## 🗂 Data Model Context
+## 🗂 Dataset
 
-The dataset consists of multiple relational tables representing orders, customers, products, sellers, payments, reviews, and geolocation.
+**Source:** Brazilian E-Commerce Public Dataset by Olist
 
-This analysis primarily utilized:
+The dataset contains transactional information across orders, order items, customers, products, sellers, payments, reviews, and geolocation.
 
-| Table | Usage |
+The analysis primarily uses:
+
+| Table | Purpose |
 |---|---|
-| `order_items` | Item-level price and freight values |
 | `orders` | Order status and timestamps |
+| `order_items` | Item-level price and freight values |
 | `customers` | Customer-level aggregation |
-| `products` | Category-level analysis |
-| `geolocation` | City-level efficiency analysis |
+| `products` | Product/category analysis |
+| `geolocation` | City-level analysis |
 
-Revenue was calculated at the item level and aggregated to the customer level after filtering for delivered orders only.
-
----
-
-## 🧩 Business Problem
-
-Although revenue has increased, profitability and operational efficiency have not improved proportionally. Leadership lacks clarity on whether the issue stems from customer behavior, product mix imbalance, geographic inefficiencies, or order-level cost pressure.
-
-Without this visibility, decision-makers cannot confidently prioritize actions to improve long-term sustainability.
+Only delivered orders are included in the core revenue analysis.
 
 ---
 
 ## 🛠 Analytical Approach
 
-All analysis was performed using SQL (PostgreSQL-style syntax). Only delivered orders were included in revenue calculations to ensure transactional accuracy.
+### SQL — Analytical Layer
 
-Profitability was assessed using behavioral proxies:
-- **AOV** — Average Order Value
-- **Repeat purchase behavior** — One-time vs returning customers
-- **Revenue concentration** — Customer-level revenue distribution
-- **Freight %** — Freight cost as a share of revenue
+PostgreSQL was used to perform the underlying analysis, including:
 
----
+- multi-table joins
+- CTE-based query structuring
+- customer segmentation
+- revenue concentration analysis
+- category-level revenue analysis
+- time-series analysis
+- city-level efficiency analysis
+- freight cost analysis
+- window functions for ranking and cumulative revenue
 
-## 📌 Key Findings
+### Power BI — Visualization Layer
 
-### 1️⃣ Customer Structure
-One-time buyers contribute the majority of orders and revenue. The repeat customer base remains comparatively small, confirming growth is **acquisition-led rather than retention-led**.
+The SQL outputs were then used to build a two-page executive dashboard focused on business storytelling rather than chart volume.
 
-![Revenue Structure by Customer Type](dashboard/Revenue%20Structure%20by%20Category%20type.png)
+The dashboard communicates:
 
----
-
-### 2️⃣ Revenue Concentration
-The top 10% of customers contribute **41% of total revenue**, and the top 20% contribute **54%**. Revenue is moderately concentrated, with value skewed toward higher-spending customers.
-
-![Revenue Concentration Curve](dashboard/Revenue%20Concentration%20Curve.png)
-
----
-
-### 3️⃣ Category Dependency
-Several high-revenue categories are largely driven by one-time buyers, indicating **limited repeat engagement** in key segments.
-
-![Category Revenue by Customer Type](dashboard/Category%20Revenue%20by%20Customer%20type.png)
+1. **Growth quality** — revenue trend, order volume, AOV, and one-time vs repeat revenue
+2. **Structural drivers** — customer revenue concentration, category dependency, and geographic concentration
+3. **Business implications** — concise findings and recommended actions
 
 ---
 
-### 4️⃣ Repeat Revenue Share
-Repeat revenue remains low across all categories, with **no segment contributing more than 10%** from returning customers.
+# 📊 Power BI Dashboard
 
-![Repeat Revenue Share by Category](dashboard/Repeat%20Revenue%20Share%20by%20Category.png)
+## Page 1 — D2C E-Commerce Growth Quality
+
+The executive overview evaluates whether revenue growth is translating into stronger customer economics.
+
+**Key views:**
+- Monthly revenue trend
+- Revenue by customer type
+- Top categories by revenue and repeat mix
+- Total revenue, orders, AOV, and repeat revenue KPIs
+
+![D2C E-Commerce Growth Quality Dashboard](dashboard/D2C%20E-Commerce%20Growth%20Quality.png)
 
 ---
 
-### 5️⃣ Order Value vs Volume
-Revenue concentration across categories is driven more by **order volume** than by high average order value — confirming the business is scaling through acquisition, not through increasing customer value.
+## Page 2 — Customer & Operational Drivers
 
-![AOV by Category](dashboard/AOV%20by%20Category.png)
+The second page focuses on structural concentration and the business implications of the observed growth pattern.
+
+**Key views:**
+- Revenue concentration curve
+- One-time vs repeat revenue mix by category
+- Revenue concentration across top cities
+- Business implications and recommended actions
+
+![Customer & Operational Drivers Dashboard](dashboard/Customer%20%26%20Operational%20Drivers.png)
 
 ---
 
-### 6️⃣ Structural Risk
-The business is heavily dependent on continuous customer acquisition. Without improving repeat purchasing or increasing order value, long-term growth sustainability is exposed to **acquisition cost pressure**.
+# 📌 Key Findings
+
+### 1. Revenue is highly concentrated
+
+Approximately the top 20% of customers account for roughly 60% of cumulative revenue, indicating meaningful dependence on a relatively small group of customers.
+
+### 2. One-time buyers dominate revenue
+
+Repeat revenue remains a small share of total revenue and is limited across the highest-revenue categories, suggesting that growth is more acquisition-led than retention-led.
+
+### 3. Revenue is geographically concentrated
+
+São Paulo generates approximately **R$1.86M**, nearly twice Rio de Janeiro at approximately **R$0.96M**.
+
+---
+
+# 💡 Business Recommendations
+
+- Prioritize second-purchase and retention initiatives for high-value customers.
+- Use category-level repeat revenue performance to identify stronger retention opportunities.
+- Concentrate expansion efforts on proven high-revenue markets before broad geographic scaling.
 
 ---
 
 ## ⚠ Limitations
 
-- No product cost or full operational cost data available
-- No marketing or customer acquisition cost data
-- No customer demographic attributes
-- Partial early-period data coverage (2016)
-
-Profitability is therefore evaluated using behavioral and structural proxies rather than true margin analysis.
-
----
-
-## 📘 Learning Breakdown (Simple Explanation)
-
-This section explains the analysis in a clear and beginner-friendly way.
-
-### 1. Growth vs Retention
-A business can have increasing orders but still face problems.  
-If most customers buy only once, growth is driven by new users instead of retention.
-
-### 2. Repeat vs One-Time Customers
-Customers can be classified based on how many times they purchase:
-- One-time customers → low engagement  
-- Repeat customers → stronger loyalty  
-
-A higher share of repeat customers usually indicates a healthier business.
-
-### 3. Revenue Concentration
-Revenue is often not evenly distributed.  
-If a small group of customers contributes most of the revenue, it creates dependency risk.
-
-### 4. Why This Analysis Matters
-Instead of focusing only on total sales, it is important to also consider:
-- Customer retention  
-- Revenue distribution  
-- Long-term sustainability  
-
-### Practice Thinking
-- How can repeat purchase rate be calculated using SQL?
-- How can high-value customers be identified?
+- No product cost or complete operating-cost data is available, so true profit/margin cannot be calculated.
+- No marketing or customer acquisition cost data is available.
+- Customer demographics are not available.
+- Freight percentage can become unstable for very low-revenue, one-order cities; it is therefore treated as an operational pressure proxy rather than a standalone profitability metric.
+- The Olist dataset represents Brazilian e-commerce and is used as the source context for this D2C case study.
 
 ---
 
 ## 📂 Repository Structure
-```
+
+```text
 📁 sql/
    ├── 01_customer_segmentation.sql
    ├── 02_revenue_concentration.sql
    ├── 03_category_analysis.sql
-   ├── 04_city_efficiency.sql
-   ├── 05_time_trend.sql
-   └── 06_freight_efficiency.sql
+   ├── 04_city_analysis.sql
+   ├── 05_time_trend_analysis.sql
+   └── 06_freight_efficiency_analysis.sql
 
 📁 dashboard/
-   ├── Revenue structure by customer type.png
-   ├── Revenue concentration curve.png
-   ├── Category Revenue by Customer type.png
-   ├── Repeat Revenue Share by category.png
-   └── AOV by category.png
+   ├── D2C E-Commerce Growth Quality.png
+   └── Customer & Operational Drivers.png
+
+README.md
 ```
 
 ---
 
 ## 💡 Skills Demonstrated
-- Multi-table joins across normalized transactional tables
-- CTE-based query structuring
-- Window functions — RANK, cumulative revenue
-- Revenue proxy modeling
-- Behavioral segmentation
-- Business-driven SQL analysis
+
+- PostgreSQL
+- Multi-table joins
+- CTEs
+- Window functions
+- Customer segmentation
+- Revenue concentration analysis
+- Category analysis
+- Time-series analysis
+- Geographic analysis
+- Power BI dashboard development
+- Business storytelling and recommendations
 
 ---
 
-*👤 Aashka Tanvi — SQL Case Study: Growth Quality Evaluation*  
-*Built as an end-to-end analyst-style project focusing on business framing and structural risk assessment.*
+*👤 Aashka Tanvi — D2C E-Commerce Growth Quality Analysis*
