@@ -105,7 +105,7 @@ The top 20% of customers contribute ~57% of total revenue, indicating meaningful
 
 ### 2. One-time buyers dominate revenue
 
-Repeat revenue remains a small share of total revenue and is limited across the highest-revenue categories, suggesting that growth is more acquisition-led than retention-led.
+Repeat revenue remains a small share of total revenue, with one-time buyers contributing most revenue across the highest-revenue categories, indicating a meaningful retention gap.
 
 ### 3. Revenue is geographically concentrated
 
