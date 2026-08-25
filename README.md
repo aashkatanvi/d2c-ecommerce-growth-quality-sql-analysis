@@ -101,7 +101,7 @@ The second page focuses on structural concentration and the business implication
 
 ### 1. Revenue is highly concentrated
 
-Approximately the top 20% of customers account for roughly 60% of cumulative revenue, indicating meaningful dependence on a relatively small group of customers.
+The top 20% of customers contribute ~57% of total revenue, indicating meaningful revenue concentration among higher-value customers.
 
 ### 2. One-time buyers dominate revenue
 
